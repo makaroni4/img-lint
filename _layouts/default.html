@@ -21,19 +21,25 @@
       <div class="site">
         <div class="header">
           <div class="left">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            <a class="title" href="/">@makaroni4</a>
           </div>
           <div class="right">
             <ul>
-              <li><a class="extra" href="/">home</a></li>
+              <li><a class="extra" href="/">posts</a></li>
               <li><a class="extra" href="/talks/">talks</a></li>
               <li><a class="extra" href="/talks/">about</a></li>
             </ul>
           </div>
         </div>
         <div class="clrfix"></div>
+        {% if page.url == '/' %}
+          <div class="caption">
+            My name is <b>Anatoli Makarevich</b>, enthusiastic human, <b>rubyist<img src="/images/ruby_sup.png" width="16px" height="16px"/></b>, book reader, design and business thinker.
+          </div>
+        {% endif %}
 
         {{ content }}
+
 
         <div class="footer">
           <div class="contact">
