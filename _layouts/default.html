@@ -6,6 +6,7 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
@@ -14,32 +15,35 @@
 
     </head>
     <body>
-
-        <div class="site">
-          <div class="header">
+      {% if page.url == '/' %}
+        <div class="back"></div>
+      {% endif %}
+      <div class="site">
+        <div class="header">
+          <div class="left">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <span class="caption">{{ site.caption }}</span>
-            <a class="extra" href="/">home</a>
           </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
+          <div class="right">
+            <ul>
+              <li><a class="extra" href="/">home</a></li>
+              <li><a class="extra" href="/talks/">talks</a></li>
+              <li><a class="extra" href="/talks/">about</a></li>
+            </ul>
           </div>
         </div>
+        <div class="clrfix"></div>
 
+        {{ content }}
+
+        <div class="footer">
+          <div class="contact">
+            <ul>
+              <li><a href="https://github.com/makaroni4"><i class="fa fa-github"></i></a></li>
+              <li><a href="https://twitter.com/makaroni4"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="mailto:makaroni4@gmail.com"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </body>
 </html>

@@ -1,10 +1,3 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,13 +7,24 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
+  font: 13.34px Avenir, Helvetica, Arial, sans-serif;
   font-size: small;
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+h1, h2 {
+    font-size: 3rem;
+    line-height: 1.1em;
+    letter-spacing: -1px;
+  }
+
+  h3 {
+    font-size: 2.8rem;
+  }
+
+  h4 {
+    font-size: 2.3rem;
+  }
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
@@ -28,6 +32,15 @@ p { margin: 1em 0; }
 a         { color: #00a; }
 a:hover   { color: #000; }
 a:visited { color: #a0a; }
+
+.back {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 300px;
+  background: url("/images/index_back.jpg") no-repeat 0% 50%;
+  background-size: cover;
+}
 
 /*****************************************************************************/
 /*
@@ -37,6 +50,10 @@ a:visited { color: #a0a; }
 .posts {
   list-style-type: none;
   margin-bottom: 2em;
+}
+
+.posts a {
+  color: #307EA9;
 }
 
 .posts li {
@@ -49,18 +66,42 @@ a:visited { color: #a0a; }
   font-size: 80%;
 }
 
+.post-date {
+  font-size: 0.8em;
+  color: #a1a1a1;
+}
+
 /*****************************************************************************/
 /*
 /* Site
 /*
 /*****************************************************************************/
-
+.clrfix {
+  clear: both;
+}
 .site {
   font-size: 115%;
   text-align: justify;
   width: 42em;
   margin: 3em auto 2em;
   line-height: 1.5em;
+}
+
+.left {
+  float: left;
+}
+
+.header .left .title {
+  font-size: 24px;
+}
+
+.right {
+  float: right;
+}
+
+.header .right ul li {
+  list-style: none;
+  display: inline;
 }
 
 .header a {
@@ -75,13 +116,6 @@ a:visited { color: #a0a; }
 
 .title a {
   color: #a00;
-}
-
-
-.header .caption {
-  font-style: italic;
-  font-size: 0.7em;
-  color: grey;
 }
 
 .title a:hover {
@@ -110,22 +144,23 @@ a:visited { color: #a0a; }
 }
 
 .footer .contact {
-  float: left;
-  margin-right: 3em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer .contact ul li{
+  font-size: 2em;
+  list-style: none;
+  display: inline;
+  margin-left: 10px;
 }
 
 .footer .contact a {
-  color: #8085C1;
+  color: #e1e1e1;
 }
 
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.footer .rss img {
-  border: 0;
+.footer .contact a:hover {
+  color: #666;
 }
 
 /*****************************************************************************/
@@ -135,6 +170,11 @@ a:visited { color: #a0a; }
 /*****************************************************************************/
 
 /* standard */
+.post {
+  font-size: 18px;
+  line-height: 140%;
+}
+
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
@@ -155,6 +195,15 @@ a:visited { color: #a0a; }
   border: none;
 }
 
+.post blockquote p {
+  color: #000;
+  margin: 50px -30px 20px -30px;
+  padding: 10px 30px 10px 25px;
+  border-left: 5px solid #eee;
+  font-style: italic;
+  font-size: 16px;
+}
+
 /* terminal */
 .post pre.terminal {
   border: 1px solid #000;
@@ -164,4 +213,75 @@ a:visited { color: #a0a; }
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .back {
+    display: none;
+  }
+
+  .site {
+    width: 100%;
+  }
+
+  blockquote {
+      margin-left: 0;
+  }
+
+  h1 {
+      font-size: 4.8rem;
+      text-indent: -2px;
+  }
+
+  h2 {
+      font-size: 3.8rem;
+  }
+
+  h3 {
+      font-size: 3.3rem;
+  }
+
+  h4 {
+      font-size: 2.8rem;
+  }
+
+}
+
+/* ==========================================================================
+   10. Media Queries - Smaller than 500px
+   ========================================================================== */
+
+
+@media only screen and (max-width: 500px) {
+  .back {
+    display: none;
+  }
+
+  .site {
+    width: 100%;
+  }
+
+  .post {
+    width:auto;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 0.8em;
+    line-height: 1.6em;
+  }
+
+
+  h1, h2 {
+    font-size: 3rem;
+    line-height: 1.1em;
+    letter-spacing: -1px;
+  }
+
+  h3 {
+    font-size: 2.8rem;
+  }
+
+  h4 {
+    font-size: 2.3rem;
+  }
 }
