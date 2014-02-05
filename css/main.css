@@ -32,20 +32,19 @@ a:visited {
   color: #a0a;
 }
 .back {
-  margin: 0;
-  padding: 0;
   width: 100%;
-  height: 270px;
-  background: url("/images/index_back.jpg") no-repeat 0% 50%;
+  height: 300px;
+  background: url("/images/index_back.jpg") no-repeat center center;
   background-size: cover;
 }
+
 /*****************************************************************************/
 
 /*
 /* Home
 /*
 /*****************************************************************************/
- .posts {
+.posts {
   list-style-type: none;
   margin-bottom: 2em;
 }
@@ -80,6 +79,7 @@ a:visited {
   text-align: left;
   width: 42em;
   margin: 3em auto 2em;
+  width: 780px;
   line-height: 1.5em;
 }
 .left {
@@ -213,13 +213,8 @@ blockquote cite a {
 }
 
 @media only screen and (max-width: 900px) {
-  .back {
-    display: none;
-  }
   .site {
-    width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 700px;
   }
   blockquote {
     margin-left: 0;
@@ -244,6 +239,7 @@ blockquote cite a {
   }
   .site {
     width: 100%;
+    font-size: 20px;
     margin-left: 10px;
     padding-right: 10px;
   }
