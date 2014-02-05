@@ -4,7 +4,7 @@
 }
 body {
   background-color: #FFF;
-  font: 14px Avenir, Helvetica, Arial, sans-serif;
+  font: 16px Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
 }
 h1 {
@@ -21,9 +21,7 @@ h4 {
   font-size: 23px;
   margin-bottom: 0.5em;
 }
-ol, ul, p {
-  margin: 1em 0;
-}
+
 a {
   color: #00a;
 }
@@ -79,7 +77,6 @@ a:visited {
   clear: both;
 }
 .site {
-  font-size: 115%;
   text-align: left;
   width: 42em;
   margin: 3em auto 2em;
@@ -185,6 +182,9 @@ a.title :hover {
 .post pre code {
   border: none;
 }
+.post ol, .post ul, .post p {
+  margin: 1em 0;
+}
 blockquote {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -217,7 +217,7 @@ blockquote cite a {
     display: none;
   }
   .site {
-    width: 90%;
+    width: 100%;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -225,17 +225,16 @@ blockquote cite a {
     margin-left: 0;
   }
   h1 {
-    font-size: 4.8rem;
-    text-indent: -2px;
+    font-size: 0.5em;
   }
   h2 {
-    font-size: 3.8rem;
+    font-size: 0.5em;
   }
   h3 {
-    font-size: 3.3rem;
+    font-size: 0.5em;
   }
   h4 {
-    font-size: 2.8rem;
+    font-size: 0.5em;
   }
 }
 
@@ -248,22 +247,27 @@ blockquote cite a {
     margin-left: 10px;
     padding-right: 10px;
   }
+  .header .left .title {
+    font-size: 16px;
+  }
+
+  .header .right {
+    font-size: 12px;
+  }
   .post {
     width:auto;
-    margin-left: 16px;
-    margin-right: 16px;
     font-size: 0.8em;
-    line-height: 1.6em;
   }
-  h1, h2 {
-    font-size: 3rem;
-    line-height: 1.1em;
-    letter-spacing: -1px;
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 0.5em;
   }
   h3 {
-    font-size: 2.8rem;
+    font-size: 0.5em;
   }
   h4 {
-    font-size: 2.3rem;
+    font-size: 0.5em;
   }
 }
