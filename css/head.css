@@ -133,7 +133,7 @@ a.b-contact-item__link:hover {
 }
 
 /* POST CONTENT MARKUP */
-.b-post p, ol, ul {
+.b-post p, .b-post ol, .b-post ul {
   margin-bottom: 10px;
   margin-top: 10px;
 }
