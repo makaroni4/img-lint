@@ -3,17 +3,17 @@ layout: default
 title: "@makaroni4 blog"
 ---
 
-<div id="home">
-  <ul class="posts">
+<div class="b-page__line">
+  <ul class="b-post-list">
     {% for post in site.posts %}
-      <li>
-        <div class="left">
-          <a href="{{ post.url }}">{{ post.title }}</a>
+      <li class="b-post-list__item">
+        <div class="b-post-list__title-container">
+          <a class="b-post-list__title" href="{{ post.url }}">{{ post.title }}</a>
         </div>
-        <div class="right post-date">
+        <div class="b-post-list__date">
           {{ post.date | date_to_string }}
         </div>
-        <div class="clrfix"></div>
+        <div class="b-post__clrfx"></div>
       </li>
     {% endfor %}
   </ul>

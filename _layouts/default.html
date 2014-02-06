@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
 
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/head.css">
+  </head>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+  <body class="b-page">
+    {% if page.url == '/' %}
+      <div class="b-page__head-picture"></div>
+    {% endif %}
 
-    </head>
-    <body>
-      {% if page.url == '/' %}
-        <div class="back"></div>
-      {% endif %}
-      <div class="site">
-        <div class="header">
-          <div class="left">
-            <a class="title" href="/">@makaroni4</a>
-          </div>
-          <div class="right">
-            <ul>
-              <li><a class="extra" href="/">posts</a></li>
-              <li><a class="extra" href="/talks/">talks</a></li>
-              <li><a class="extra" href="/talks/">about</a></li>
-            </ul>
+    <div class="b-page__line">
+      <div class="b-head">
+        <div class="b-head__logo">
+          <div class="b-logo">
+            <a class="b-logo__link" href="/">@makaroni4</a>
           </div>
         </div>
-        <div class="clrfix"></div>
-        {% if page.url == '/' %}
-          <div class="caption">
-            My name is <b>Anatoli Makarevich</b>, enthusiastic human, <b>rubyist<img src="/images/ruby_sup.png" width="16px" height="16px"/></b>, book reader, design and business thinker.
-          </div>
-        {% endif %}
-
-        {{ content }}
-
-
-        <div class="footer">
-          <div class="contact">
-            <ul>
-              <li><a href="https://github.com/makaroni4"><i class="fa fa-github"></i></a></li>
-              <li><a href="https://twitter.com/makaroni4"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="mailto:makaroni4@gmail.com"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-          </div>
+        <div class="b-head__nav">
+          <ul class="b-menu">
+            <li class="b-menu__item"><a class="b-menu__item-link" href="/">posts</a></li>
+            <li class="b-menu__item"><a class="b-menu__item-link" href="/talks/">talks</a></li>
+            <li class="b-menu__item"><a class="b-menu__item-link" href="/talks/">about</a></li>
+          </ul>
         </div>
       </div>
-    </body>
+    </div>
+
+    {% if page.url == '/' %}
+      <div class="b-page__line">
+        <div class="b-index-greeting">
+          My name is <b>Anatoli Makarevich</b>, enthusiastic human, <b>rubyist<img src="/images/ruby_sup.png" width="16px" height="16px"/></b>, book reader, design and business thinker.
+        </div>
+      </div>
+    {% endif %}
+
+    {{ content }}
+
+    <div class="b-page__footer">
+      <ul class="b-page-footer__contacts">
+        <li class="b-contact-item"><a class="b-contact-item__link" href="https://github.com/makaroni4"><i class="fa fa-github"></i></a></li>
+        <li class="b-contact-item"><a class="b-contact-item__link" href="https://twitter.com/makaroni4"><i class="fa fa-twitter"></i></a></li>
+        <li class="b-contact-item"><a class="b-contact-item__link" href="mailto:makaroni4@gmail.com"><i class="fa fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </body>
 </html>

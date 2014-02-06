@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "First post!"
+title:  "First post! Lorem ipsum dolor sit amet, consectetur adipisicing"
 date:   2014-01-01 14:53:48
+categories: ruby, rails
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
