@@ -31,7 +31,11 @@
   float: left;
 }
 
-a.b-logo__link {
+.b-logo__avatar-container {
+  display: none;
+}
+
+a.b-logo__username {
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
@@ -168,15 +172,11 @@ a.b-contact-item__link:hover {
   margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 900px) {
-
-}
-
-@media only screen and (max-width: 500px) {
-  .b-page__line {
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
+@media only screen and (max-width: 750px) {
+  .b-page__line, .b-post {
+    width: 90%;
+    padding-right: 5%;
+    padding-left: 5%;
   }
 
   .b-page__head-picture {
@@ -184,13 +184,38 @@ a.b-contact-item__link:hover {
   }
 
   .b-page__footer {
-    width: 100%;
-    border: none;
+    width: 90%;
   }
 
-  .b-post {
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
+  .b-logo__avatar-container {
+    display: block;
+    float: left;
+  }
+
+  .b-logo__username-container {
+    margin-left: 10px;
+    margin-top: 5px;
+    line-height: 55px;
+    float: right;
+  }
+
+  .b-logo__avatar {
+    width: 60px;
+    height: 60px;
+    display: block;
+    background: url("/images/ava.jpg") no-repeat center center;
+    background-size: contain;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+  }
+
+  .b-head__nav {
+    line-height: 60px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .b-logo__username-container {
+    display: none;
   }
 }
