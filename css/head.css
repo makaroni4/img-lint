@@ -165,6 +165,9 @@ a.b-contact-item__link:hover {
 .b-post blockquote cite {
   font-weight: bold;
 }
+.b-post .highlight {
+  overflow-x: scroll;
+}
 /* END POST CONTENT MARKUP */
 
 .b-post__date {
