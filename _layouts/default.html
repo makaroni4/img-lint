@@ -14,7 +14,11 @@
 
   <body class="b-page">
     {% if page.url == '/' %}
-      <div class="b-page__head-picture"></div>
+      <div class="b-page__index-picture"></div>
+    {% elsif page.url == '/talks/' %}
+      <div class="b-page__talks-picture"></div>
+    {% elsif page.url == '/about/' %}
+      <div class="b-page__about-picture"></div>
     {% endif %}
 
     <div class="b-page__line">
@@ -33,6 +37,7 @@
         <div class="b-head__nav">
           <ul class="b-menu">
             <li class="b-menu__item"><a class="b-menu__item-link" href="/">posts</a></li>
+            <li class="b-menu__item"><a class="b-menu__item-link" href="/talks">talks</a></li>
             <li class="b-menu__item"><a class="b-menu__item-link" href="/about/">about</a></li>
           </ul>
         </div>

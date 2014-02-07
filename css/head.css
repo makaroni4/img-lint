@@ -10,10 +10,24 @@
   font: 16px Avenir, Helvetica, Arial, sans-serif;
 }
 
-.b-page__head-picture {
+.b-page__index-picture {
   width: 100%;
   height: 300px;
   background: url("/images/index_back.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.b-page__talks-picture {
+  width: 100%;
+  height: 300px;
+  background: url("/images/conf.jpg") no-repeat center 0%;
+  background-size: cover;
+}
+
+.b-page__about-picture {
+  width: 100%;
+  height: 300px;
+  background: url("/images/mac.jpg") no-repeat center 100%;
   background-size: cover;
 }
 
@@ -169,6 +183,9 @@ a.b-contact-item__link:hover {
 .b-post .highlight {
   overflow-x: scroll;
 }
+.b-post a {
+  color: #307EA9;
+}
 /* END POST CONTENT MARKUP */
 
 .b-post__date {
@@ -176,25 +193,12 @@ a.b-contact-item__link:hover {
   margin-bottom: 15px;
 }
 
-.b-about__avatar {
-  width: 100%;
-  height: 300px;
-  background: url("/images/mac.jpg") no-repeat center 100%;
-  background-size: cover;
+.b-talks__youtube-link {
+  display: none;
 }
 
-.b-about p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-a.b-about__link {
-  color: #307EA9;
-  text-decoration: none;
-}
-
-a.b-about__link:hover {
-  color: #444;
+.b-talks__youtube-widget {
+  display: block;
 }
 
 @media only screen and (max-width: 750px) {
@@ -204,7 +208,7 @@ a.b-about__link:hover {
     padding-left: 5%;
   }
 
-  .b-page__head-picture {
+  .b-page__index-picture, .b-page__about-picture, .b-page__talks-picture {
     display: none;
   }
 
@@ -236,6 +240,16 @@ a.b-about__link:hover {
 
   .b-head__nav {
     line-height: 60px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .b-talks__youtube-link {
+    display: block;
+  }
+
+  .b-talks__youtube-widget {
+    display: none;
   }
 }
 
