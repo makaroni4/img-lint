@@ -16,5 +16,17 @@ title: "@makaroni4 blog"
         <div class="b-post__clrfx"></div>
       </li>
     {% endfor %}
+
+    {% for post in site.data.old_posts %}
+      <li class="b-post-list__item">
+        <div class="b-post-list__title-container">
+          <a class="b-post-list__title" href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+        <div class="b-post-list__date">
+          {{ post.date | date_to_string }}
+        </div>
+        <div class="b-post__clrfx"></div>
+      </li>
+    {% endfor %}
   </ul>
 </div>
