@@ -73,11 +73,12 @@ a.b-menu__item-link {
 .b-post-list__item {
   list-style: none;
   display: block;
-  line-height: 160%;
+  line-height: 180%;
 }
 
 a.b-post-list__title {
   color: #307EA9;
+  text-decoration: none;
 }
 
 .b-post-list__date {
