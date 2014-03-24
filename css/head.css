@@ -10,24 +10,11 @@
   font: 16px Avenir, Helvetica, Arial, sans-serif;
 }
 
-.b-page__index-picture {
+.b-page__background-picture {
   width: 100%;
   height: 300px;
-  background: url("/images/index_back.jpg") no-repeat center center;
-  background-size: cover;
-}
-
-.b-page__talks-picture {
-  width: 100%;
-  height: 300px;
-  background: url("/images/conf.jpg") no-repeat center 0%;
-  background-size: cover;
-}
-
-.b-page__about-picture {
-  width: 100%;
-  height: 300px;
-  background: url("/images/mac.jpg") no-repeat center 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 

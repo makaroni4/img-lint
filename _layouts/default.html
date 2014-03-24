@@ -13,12 +13,8 @@
   </head>
 
   <body class="b-page">
-    {% if page.url == '/' %}
-      <div class="b-page__index-picture"></div>
-    {% elsif page.url == '/talks/' %}
-      <div class="b-page__talks-picture"></div>
-    {% elsif page.url == '/about/' %}
-      <div class="b-page__about-picture"></div>
+    {% if page.background_image %}
+      <div class="b-page__background-picture" style="background-image:url({{ page.background_image }})"></div>
     {% endif %}
 
     <div class="b-page__line">

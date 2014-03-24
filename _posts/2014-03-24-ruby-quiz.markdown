@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Ruby quiz #1"
+date: 2014-03-24
+categories: ruby quiz
+published: true
+---
+
+<iframe width="100%" scrolling="no" src="http://gistroll.com/rolls/1/assessments/new" frameborder="0" allowfullscreen></iframe>
+
+<script type="text/javascript">
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//gistroll.dev/assets/iframe.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
