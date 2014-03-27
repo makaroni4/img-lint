@@ -187,7 +187,7 @@ As you can see we need to pull the string for 77.09Hz :)
                       clickmap:true,
                       trackLinks:true,
                       accurateTrackBounce:true,
-                      yaparams: yaParams
+                      params: yaParams
                     });
           } catch(e) { }
       });
