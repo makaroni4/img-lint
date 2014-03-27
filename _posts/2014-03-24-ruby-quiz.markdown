@@ -4,6 +4,7 @@ title:  "Ruby quiz #1"
 date: 2014-03-24
 categories: ruby quiz
 published: true
+default_metrika: true
 ---
 
 <iframe width="100%" scrolling="no" src="http://gistroll.com/rolls/1/assessments/new" frameborder="0" allowfullscreen></iframe>
