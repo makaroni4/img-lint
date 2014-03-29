@@ -136,7 +136,7 @@ And a final plot:
 As you can see we need to pull the string for 77.09Hz :)
 
 <div class="abquiz">
-  <iframe width="100%" scrolling="no" src="http://gistroll.com/rolls/8/assessments/new" frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" scrolling="no" src="http://gistroll.com/iframe/rolls/8/assessments/new" frameborder="0" allowfullscreen></iframe>
 
   <script type="text/javascript">
   (function() {
