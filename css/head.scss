@@ -21,7 +21,23 @@ body {
 }
 
 .avatar {
+  border-radius: 46px;
+
   @include at2x("avatar", 92px, 92px);
+
+  &--easter-egg {
+    display: none;
+
+    @include at2x("avatar_easter_egg", 92px, 92px);
+  }
+
+  &--active {
+    display: block;
+  }
+
+  &--movable {
+    position: absolute;
+  }
 }
 
 .page {
