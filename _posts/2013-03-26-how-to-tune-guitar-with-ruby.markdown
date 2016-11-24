@@ -5,10 +5,11 @@ date: 2014-03-26
 categories: ruby hacking
 background_image: "/images/posts/ruby_fft/top_image.png"
 published: true
-default_metrika: false
 ---
 
 From time to time, when nobody sees me, I like to play the guitar and every time I face a challenge – how to tune it properly. And like in any other case Ruby comes to the rescue!
+
+<!--more-->
 
 ### Run-up
 
@@ -134,75 +135,3 @@ And a final plot:
 <img src="/images/posts/ruby_fft/spectrum.png" width="600px" />
 
 As you can see we need to pull the string for 77.09Hz :)
-
-<div class="abquiz">
-  <iframe width="100%" scrolling="no" src="http://gistroll.com/iframe/rolls/8/assessments/new" frameborder="0" allowfullscreen></iframe>
-
-  <script type="text/javascript">
-  (function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = '//gistroll.com/assets/iframe.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-  </script>
-</div>
-
-<script type="text/javascript">
-  function getCookie(name) {
-    var parts = document.cookie.split(name + "=");
-    if (parts.length == 2) return parts.pop().split(";").shift();
-  }
-
-  function set_ab(ab_name, ab_var) {
-    var el_count = ab_var.length;
-    if ( !getCookie(ab_name) ) {
-      var r_ab = Math.floor(Math.random() * el_count);
-      var ab_sel = ab_var[r_ab];
-      var date = new Date( new Date().getTime() + 1000*60*60*24*7 );
-      document.cookie= ab_name + "=" + ab_sel + "; path=/; expires=" + date.toUTCString();
-    }
-    else {
-      var ab_sel = getCookie(ab_name);
-    }
-
-    console.log(ab_sel)
-    if(ab_sel == "Without_quiz") {
-      $(".abquiz").remove();
-    }
-
-    return ab_sel;
-  }
-
-  var ab1_name = 'ab_blog_post_with_quiz';
-  var ab1_type = set_ab(ab1_name, ["With_quiz", "Without_quiz"]);
-
-  yaParams = {};
-  yaParams[ab1_name] = ab1_type;
-
-  (function (d, w, c) {
-      (w[c] = w[c] || []).push(function() {
-          try {
-              w.yaCounter24413818 = new Ya.Metrika({id:24413818,
-                      webvisor:true,
-                      clickmap:true,
-                      trackLinks:true,
-                      accurateTrackBounce:true,
-                      params: yaParams
-                    });
-          } catch(e) { }
-      });
-
-      var n = d.getElementsByTagName("script")[0],
-          s = d.createElement("script"),
-          f = function () { n.parentNode.insertBefore(s, n); };
-      s.type = "text/javascript";
-      s.async = true;
-      s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-      if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-      } else { f(); }
-  })(document, window, "yandex_metrika_callbacks");
-</script>
-
-<noscript><div><img src="//mc.yandex.ru/watch/24413818" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

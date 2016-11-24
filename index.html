@@ -11,6 +11,7 @@ background_image: "/images/index_back.jpg"
         <div class="b-post-list__title-container">
           <a class="b-post-list__title" href="{{ post.url }}">{{ post.title }}</a>
         </div>
+        {{ post.excerpt }}
         <div class="b-post-list__date">
           {{ post.date | date_to_string }}
         </div>
@@ -21,11 +22,14 @@ background_image: "/images/index_back.jpg"
     {% for post in site.data.old_posts %}
       <li class="b-post-list__item">
         <div class="b-post-list__title-container">
-          <a class="b-post-list__title" href="{{ post.url }}">{{ post.title }}</a>
+          <a class="b-post-list__title" href="{{ post.url }}">
+            {{ post.title }}
+          </a>
         </div>
         <div class="b-post-list__date">
           {{ post.date | date_to_string }}
         </div>
+
         <div class="b-post__clrfx"></div>
       </li>
     {% endfor %}

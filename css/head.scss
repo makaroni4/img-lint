@@ -1,6 +1,59 @@
-* {
-  margin: 0;
-  padding: 0;
+---
+---
+
+@import "normalize";
+@import "colors";
+@import "base";
+@import "syntax";
+@import "flexboxgrid";
+@import "mixins";
+
+body {
+  background-color: $bg-white;
+}
+
+.header {
+  padding: 39px 42px;
+
+  font-size: 18px;
+  line-height: 18px;
+  color: $darkest-grey;
+}
+
+.avatar {
+  @include at2x("avatar", 92px, 92px);
+}
+
+.page {
+  &__body {
+    width: 960px;
+    margin: 0 auto;
+
+    margin-top: 30px;
+  }
+}
+
+.post {
+  font-size: 18px;
+  line-height: 32px;
+
+  &__date {
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: $darker-grey;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 45px;
+    color: $dark-blue;
+  }
+
+  &__content {
+    margin-top: 10px;
+  }
 }
 
 .b-page {
@@ -28,20 +81,8 @@
   height: 36px;
 }
 
-.b-head__logo {
-  float: left;
-}
-
 .b-logo__avatar-container {
   display: none;
-}
-
-a.b-logo__username {
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  color: #a00;
-  text-decoration: none;
 }
 
 .b-head__nav {
@@ -54,11 +95,17 @@ a.b-logo__username {
   list-style: none;
   display: inline;
   margin-left: 15px;
-}
 
-a.b-menu__item-link {
   color: #aaa;
   text-decoration: none;
+
+  &--active {
+    padding-bottom: 4px;
+
+    border-bottom: 2px solid grey;
+
+    color: #000;
+  }
 }
 
 .b-index-greeting {

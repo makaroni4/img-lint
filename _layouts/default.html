@@ -8,59 +8,65 @@
     <link href="/images/favicon.gif" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/head.css">
     <script type="text/javascript" src="/js/jquery.js"></script>
   </head>
 
-  <body class="b-page">
-    {% if page.background_image %}
-      <div class="b-page__background-picture" style="background-image:url({{ page.background_image }})"></div>
-    {% endif %}
+  <body>
+    <div class="page">
+      <div class="page__header">
+        <header class="header">
+          <div class="b-head__nav">
+            <ul class="b-menu">
+              {% if page.url == '/' %}
+                <li class="b-menu__item b-menu__item--active">
+                  POSTS
+                </li>
+              {% else %}
+                <li class="b-menu__item">
+                  <a href="/">
+                    POSTS
+                  </a>
+                </li>
+              {% endif %}
 
-    <div class="b-page__line">
-      <div class="b-head">
-        <div class="b-head__logo">
-          <div class="b-logo">
-            <div class="b-logo__avatar-container">
-              <a class="b-logo__avatar" href="/"></a>
-            </div>
+              {% if page.url == '/about' %}
+                <li class="b-menu__item b-menu__item--active">
+                  ABOUT
+                </li>
+              {% else %}
+                <li class="b-menu__item">
+                  <a href="/about">
+                    ABOUT
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </header>
+      </div>
 
-            <div class="b-logo__username-container">
-              <a class="b-logo__username" href="/">@makaroni4</a>
-            </div>
+      <div class="page__body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+            {% if page.url == '/' %}
+              <div class="page__avatar">
+                <div class="avatar">
+
+                </div>
+              </div>
+            {% endif %}
           </div>
         </div>
-        <div class="b-head__nav">
-          <ul class="b-menu">
-            <li class="b-menu__item"><a class="b-menu__item-link" href="/">posts</a></li>
-            <li class="b-menu__item"><a class="b-menu__item-link" href="/talks">talks</a></li>
-            <li class="b-menu__item"><a class="b-menu__item-link" href="/about/">about</a></li>
-          </ul>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+            {{ content }}
+          </div>
         </div>
       </div>
     </div>
 
-    {% if page.url == '/' %}
-      <div class="b-page__line">
-        <div class="b-index-greeting">
-          My name is <b>Anatoli Makarevich</b>, enthusiastic human, <b>rubyist<img src="/images/ruby_sup.png" width="16px" height="16px"/></b>, book reader, design and business thinker.
-        </div>
-      </div>
-    {% endif %}
-
-    {{ content }}
-
-    <div class="b-page__footer">
-      <ul class="b-page-footer__contacts">
-        <li class="b-contact-item"><a class="b-contact-item__link" href="https://github.com/makaroni4"><i class="fa fa-github"></i></a></li>
-        <li class="b-contact-item"><a class="b-contact-item__link" href="http://www.linkedin.com/pub/%D0%B0%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9-%D0%BC%D0%B0%D0%BA%D0%B0%D1%80%D0%B5%D0%B2%D0%B8%D1%87/14/b8b/689"><i class="fa fa-linkedin-square"></i></a></li>
-        <li class="b-contact-item"><a class="b-contact-item__link" href="http://instagram.com/_makaroni4"><i class="fa fa-instagram"></i></a></li>
-        <li class="b-contact-item"><a class="b-contact-item__link" href="https://www.facebook.com/anatoly.makarevich"><i class="fa fa-facebook-square"></i></a></li>
-        <li class="b-contact-item"><a class="b-contact-item__link" href="https://twitter.com/makaroni4"><i class="fa fa-twitter"></i></a></li>
-        <li class="b-contact-item"><a class="b-contact-item__link" href="mailto:makaroni4@gmail.com"><i class="fa fa-envelope"></i></a></li>
-      </ul>
-    </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -71,34 +77,5 @@
       ga('send', 'pageview');
 
     </script>
-    {% if page.default_metrika %}
-      <!-- Yandex.Metrika counter -->
-      <script type="text/javascript">
-      (function (d, w, c) {
-          (w[c] = w[c] || []).push(function() {
-              try {
-                  w.yaCounter24413818 = new Ya.Metrika({id:24413818,
-                          webvisor:true,
-                          clickmap:true,
-                          trackLinks:true,
-                          accurateTrackBounce:true});
-              } catch(e) { }
-          });
-
-          var n = d.getElementsByTagName("script")[0],
-              s = d.createElement("script"),
-              f = function () { n.parentNode.insertBefore(s, n); };
-          s.type = "text/javascript";
-          s.async = true;
-          s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-          if (w.opera == "[object Opera]") {
-              d.addEventListener("DOMContentLoaded", f, false);
-          } else { f(); }
-      })(document, window, "yandex_metrika_callbacks");
-      </script>
-      <noscript><div><img src="//mc.yandex.ru/watch/24413818" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-      <!-- /Yandex.Metrika counter -->
-    {% endif %}
   </body>
 </html>

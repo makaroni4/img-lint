@@ -1,0 +1,14 @@
+@mixin at2x($image_name, $w, $h, $extention: '.png') {
+  width: $w + 0px;
+  height: $h + 0px;
+
+  $local_path: "/images/" + $image_name + $extention;
+  $local_path_2x: "/images/" + $image_name + '@2x' + $extention;
+
+  background-image: url($local_path);
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+    background-image: url($local_path_2x);
+    background-size: $w $h;
+  }
+}
