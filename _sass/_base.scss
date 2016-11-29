@@ -5,3 +5,14 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+ul {
+  list-style: none;
+}

@@ -4,18 +4,22 @@ title: "@makaroni4 blog"
 background_image: "/images/index_back.jpg"
 ---
 
-<div class="b-page__line">
-  <ul class="b-post-list">
+<div class="page__posts-list">
+  <ul class="posts-list">
     {% for post in site.posts %}
-      <li class="b-post-list__item">
-        <div class="b-post-list__title-container">
-          <a class="b-post-list__title" href="{{ post.url }}">{{ post.title }}</a>
+      <li class="post">
+        <div class="post">
+          <div class="post__date">
+            {{ post.date | date_to_string }}
+          </div>
+          <div class="post__title">
+            {{ post.title }}
+          </div>
+
+          <div class="post__content">
+            {{ post.excerpt }}
+          </div>
         </div>
-        {{ post.excerpt }}
-        <div class="b-post-list__date">
-          {{ post.date | date_to_string }}
-        </div>
-        <div class="b-post__clrfx"></div>
       </li>
     {% endfor %}
 
