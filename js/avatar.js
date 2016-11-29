@@ -1,21 +1,29 @@
 $(function() {
   var $mainAvatar = $(".js-main-avatar");
   var $easterEggAvatar = $(".js-easter-egg-avatar");
-  var mouseDown, coorX, coorY, shiftX, shiftY;
+  var mouseDown, dragX, dragY, relativeAvatarX, relativeAvatarY, avatarLeft, avatarTop;
 
   $mainAvatar.mousedown(function(e) {
     $mainAvatar.removeClass("avatar__main--active")
     mouseDown = true;
-    coorX = e.pageX;
-    coorY = e.pageY;
+    dragX = e.pageX;
+    dragY = e.pageY;
 
-    shiftX = coorX - $mainAvatar.offset().left;
-    shiftY = coorY - $mainAvatar.offset().top;
+    avatarLeft = $mainAvatar.offset().left;
+    avatarTop = $mainAvatar.offset().top;
+
+    relativeAvatarX = dragX - avatarLeft;
+    relativeAvatarY = dragY - avatarTop;
   });
 
   $(document)
     .mouseup(function() {
       mouseDown = false;
+
+      $mainAvatar.animate({
+        left: avatarLeft,
+        top: avatarTop
+      }, 500, "swing");
     })
     .mousemove(function(e) {
       if(mouseDown) {
@@ -23,8 +31,8 @@ $(function() {
         $easterEggAvatar.addClass("avatar--active");
 
         $mainAvatar.css({
-          top: e.pageY - shiftY,
-          left: e.pageX - shiftX
+          top: e.pageY - relativeAvatarY,
+          left: e.pageX - relativeAvatarX
         });
       }
     });
