@@ -7,34 +7,21 @@ background_image: "/images/index_back.jpg"
 <div class="page__posts-list">
   <ul class="posts-list">
     {% for post in site.posts %}
-      <li class="post">
-        <div class="post">
-          <div class="post__date">
-            {{ post.date | date_to_string }}
-          </div>
-          <div class="post__title">
-            {{ post.title }}
-          </div>
+      <li class="posts-list__item">
+        <a href="{{post.url}}">
+          <div class="post">
+            <div class="post__date">
+              {{ post.date | date_to_string }}
+            </div>
+            <div class="post__title">
+              {{ post.title }}
+            </div>
 
-          <div class="post__content">
-            {{ post.excerpt }}
+            <div class="post__content">
+              {{ post.excerpt }}
+            </div>
           </div>
-        </div>
-      </li>
-    {% endfor %}
-
-    {% for post in site.data.old_posts %}
-      <li class="b-post-list__item">
-        <div class="b-post-list__title-container">
-          <a class="b-post-list__title" href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </div>
-        <div class="b-post-list__date">
-          {{ post.date | date_to_string }}
-        </div>
-
-        <div class="b-post__clrfx"></div>
+        </a>
       </li>
     {% endfor %}
   </ul>

@@ -41,6 +41,8 @@ body {
 }
 
 .page {
+  padding-bottom: 60px;
+
   &__body {
     width: 960px;
     margin: 0 auto;
@@ -50,6 +52,14 @@ body {
 
   &__posts-list {
     margin-top: 60px;
+  }
+}
+
+.posts-list {
+  &__item {
+    & + & {
+      margin-top: 60px;
+    }
   }
 }
 
