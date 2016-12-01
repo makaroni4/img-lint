@@ -94,6 +94,10 @@ body {
     line-height: 32px;
     color: $copy-black;
 
+    a {
+      border-bottom: 1px solid $copy-black;
+    }
+
     p + p,
     p + iframe {
       margin-top: 20px;
@@ -110,6 +114,21 @@ body {
       font-size: 24px;
       line-height: 36px;
       color: $dark-blue;
+    }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 15px 15px;
+
+      border-left: $grey 10px solid;
+      box-shadow: 2px 0px 6px 0px rgba(0,0,0,0.5);
+
+      font-style: italic;
+
+      cite {
+        display: block;
+        margin-top: 20px;
+      }
     }
   }
 }
@@ -259,17 +278,7 @@ a.b-contact-item__link:hover {
 .b-post h4 {
   font-size: 23px;
 }
-.b-post blockquote {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 1.6em 0 1.6em -2.2em;
-  padding: 0 0 0 1.6em;
-  border-left: #4a4a4a 0.4em solid;
-  font-style: italic;
-}
-.b-post blockquote cite {
-  font-weight: bold;
-}
+
 .b-post .highlight {
   overflow-x: scroll;
 }

@@ -87,7 +87,7 @@ plotter.plot
 ### Fast Fourier Transform
 
 > Mathematical transformation employed to transform signals between time domain and frequency domain
-> <cite>[Wikipedia](http://en.wikipedia.org/wiki/Fourier_transform)<cite>
+> <cite>by [Wikipedia](http://en.wikipedia.org/wiki/Fourier_transform)</cite>
 
 We will use <http://www.fftw.org/> library for converting .wav file data (sound vs time) to its spectrum (magnitude vs frequency).
 

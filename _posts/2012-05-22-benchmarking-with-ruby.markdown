@@ -11,7 +11,8 @@ A great technique to improve your code is using benchmarking – comparison betw
 <!--more-->
 
 <cut>
-#ruby already has [Benchmark module](http://ruby-doc.org/stdlib-1.9.3/libdoc/benchmark/rdoc/Benchmark.html) which can be used for measuring time of running of your code. For example lets compare string concatenation methods **+=** and **<<**:
+
+Ruby already has [Benchmark module](http://ruby-doc.org/stdlib-1.9.3/libdoc/benchmark/rdoc/Benchmark.html) which can be used for measuring time of running of your code. For example lets compare string concatenation methods **+=** and **<<**:
 
 ~~~ruby
 require 'benchmark'
