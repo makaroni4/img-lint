@@ -4,7 +4,6 @@
 @import "normalize";
 @import "colors";
 @import "base";
-@import "syntax";
 @import "flexboxgrid";
 @import "mixins";
 
@@ -93,6 +92,10 @@ body {
     font-size: 18px;
     line-height: 32px;
     color: $copy-black;
+
+    .gist {
+      margin: 10px 0;
+    }
 
     a {
       border-bottom: 1px solid $copy-black;
