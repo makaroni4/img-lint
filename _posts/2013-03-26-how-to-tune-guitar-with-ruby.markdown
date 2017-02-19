@@ -41,7 +41,7 @@ You can download .dat file [from here](/images/posts/ruby_fft/guitar_first_strin
 
 Plotter code:
 
-~~~ruby
+```ruby
 require 'open3'
 
 class GNUPlotter < Struct.new(:data, :params)
@@ -82,7 +82,7 @@ plot_params = {
 
 plotter = GNUPlotter.new(sound_data, plot_params)
 plotter.plot
-~~~
+```
 
 ### Fast Fourier Transform
 

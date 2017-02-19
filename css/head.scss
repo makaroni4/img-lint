@@ -6,6 +6,7 @@
 @import "base";
 @import "flexboxgrid";
 @import "mixins";
+@import "highlight";
 
 body {
   background-color: $bg-white;
@@ -309,6 +310,18 @@ a.b-contact-item__link:hover {
 
 .b-talks__youtube-widget {
   display: block;
+}
+
+.highlight {
+  padding: 5px 10px;
+  overflow-x: auto;
+
+  border: 1px solid #E2E2E2;
+
+  background: #FFF;
+
+  font-size: 12px;
+  line-height: 20px;
 }
 
 @media only screen and (max-width: 750px) {

@@ -1,4 +1,4 @@
-markdown: redcarpet
-highlighter: true
+markdown: kramdown
+highlighter: rouge
 permalink: pretty
 excerpt_separator: <!--more-->
