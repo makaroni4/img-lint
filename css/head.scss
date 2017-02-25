@@ -136,6 +136,10 @@ body {
     }
   }
 
+  &__credits {
+    margin-top: 50px;
+  }
+
   &__comments {
     margin-top: 50px;
   }
@@ -322,6 +326,43 @@ a.b-contact-item__link:hover {
 
   font-size: 12px;
   line-height: 20px;
+}
+
+.tweet {
+  display: inline-block;
+  padding: 17px 45px;
+
+  border-radius: 29px;
+
+  background-color: #4187FF;
+
+  &__container {
+    display: flex;
+  }
+
+  &__icon {
+    font-size: 24px;
+    color: #FFF;
+  }
+
+  &__text {
+    margin-left: 13px;
+
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFF;
+  }
+
+  &:hover {
+    background-color: #1B6FFF;
+  }
+}
+
+.credits {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 750px) {
