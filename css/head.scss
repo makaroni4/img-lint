@@ -86,9 +86,11 @@ body {
     color: $dark-blue;
   }
 
-  &__content {
+  &__title + &__content p {
     margin-top: 10px;
+  }
 
+  &__content {
     font-family: 'Merriweather', serif;
     font-weight: 300;
     font-size: 18px;
@@ -103,14 +105,19 @@ body {
       border-bottom: 1px solid $copy-black;
     }
 
-    p + p,
-    p + iframe {
+    p,
+    iframe,
+    .highlighter-rouge {
       margin-top: 20px;
     }
 
-    p + h2,
-    p + h3 {
+    h2,
+    h3 {
       margin-top: 30px;
+    }
+
+    h3 + p {
+      margin-top: 0;
     }
 
     h3 {
