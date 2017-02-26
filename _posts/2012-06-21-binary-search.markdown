@@ -6,13 +6,13 @@ categories: ruby binary-search TDD
 published: true
 ---
 
-Hi guys! Let's talk about [binary search](http://en.wikipedia.org/wiki/Binary_search_algorithm) today. If you have [sorted](http://gistflow.com/posts/191) array than you can search elements there easily with *binary search*. [An interesting fact](http://en.wikipedia.org/wiki/Binary_search_algorithm#Implementation_issues) about binary search: only 10% of students are able to right it correctly.
+If you have sorted array than you can search elements there easily with binary search. [An interesting fact](http://en.wikipedia.org/wiki/Binary_search_algorithm#Implementation_issues) about binary search: only 10% of students are able to implement it correctly.
 
 <!--more-->
 
 How does it work? Since the array is sorted (from lowest to highest) on each step we can split array in two parts and than compare middle element with element we are looking for – returning element if they coincide and calling binary search for particular half (right if mid is lower than required element and left is not).
 
-So lets do some #TDD here and have some fun with that. When implementing binary search we should test if for empty array, array that doesn't contains required element and some more cases. And pay attention to `self.it` method that introduces some sugar to write test cases.
+So lets do some #TDD here and have some fun with that. When implementing [binary search](http://en.wikipedia.org/wiki/Binary_search_algorithm) we should test if for empty array, array that doesn't contains required element and some more cases. And pay attention to `self.it` method that introduces some sugar to write test cases.
 
 ~~~ruby
 require 'test/unit'
@@ -68,7 +68,7 @@ class Array
 end
 ~~~
 
-As you can see it is recursive implementation of the algorithm. And thanks to TDD now we can implement it in iterative manner. But before we start working on it lets do some [benchmarking](http://gistflow.com/posts/136). Ruby provides two methods for finding index of an element: [Array#index](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-index) and [Array#rindex](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-rindex). To get right benchmarking we should first take a look at sources of these methods. Index method simply iterates through the array and on each step compare element with required. Rindex does the same thing but it starts from the end and iterates to the beginning of the array. So because of it we will make two calls for it test – from the left part of the array and from the right:
+As you can see it is recursive implementation of the algorithm. And thanks to TDD now we can implement it in iterative manner. But before we start working on it lets do some [benchmarking](/ruby/benchmarking/2012/05/22/benchmarking-with-ruby/). Ruby provides two methods for finding index of an element: [Array#index](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-index) and [Array#rindex](http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-rindex). To get right benchmarking we should first take a look at sources of these methods. Index method simply iterates through the array and on each step compare element with required. Rindex does the same thing but it starts from the end and iterates to the beginning of the array. So because of it we will make two calls for it test – from the left part of the array and from the right:
 
 ~~~ruby
 require 'benchmark/ips'

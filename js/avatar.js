@@ -27,6 +27,11 @@ $(function() {
     })
     .mousemove(function(e) {
       if(mouseDown) {
+        if(!$easterEggAvatar.data("eventSent")) {
+          ga("send", "event", "easter-egg", "active", "1-homepage-avatar");
+          $easterEggAvatar.data("eventSent", true);
+        }
+
         $mainAvatar.addClass("avatar--movable");
         $easterEggAvatar.addClass("avatar--active");
 
