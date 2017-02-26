@@ -232,5 +232,34 @@ body {
 }
 
 @include media("<=phone") {
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 8px;
+  }
 
+  .page {
+    padding: 0 10px 40px;
+
+    &__posts-list {
+      margin-top: 0;
+    }
+
+    &__avatar {
+      display: none;
+    }
+
+    &__body {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    &__credits {
+      margin-top: 30px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
 }
