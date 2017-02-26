@@ -21,7 +21,10 @@ Let's start by recording the sound of the first open string.
 
 In .wav file we have "signal vs time" data and to look at the wave form we can use some software, like [Audacity](http://audacity.sourceforge.net/):
 
-<img src="/images/posts/ruby_fft/guitar_audacity.png" width="600px" />
+<figure>
+  <img src="/images/posts/ruby_fft/guitar_audacity.png" width="600px" />
+  <figcaption>Open string recording in Audacity</figcaption>
+</figure>
 
 or we can plot it with Ruby and [Gnuplot](http://www.gnuplot.info/).
 

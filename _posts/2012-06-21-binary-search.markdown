@@ -134,5 +134,3 @@ end
 Seems like iterative version is the coolest :)
 
 [Full example source code](https://gist.github.com/2966938)
-
-#ruby #binary_search

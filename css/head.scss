@@ -107,6 +107,7 @@ body {
 
     p,
     iframe,
+    figure,
     .highlighter-rouge {
       margin-top: 20px;
     }
@@ -236,6 +237,19 @@ body {
 .credits {
   display: flex;
   justify-content: space-between;
+}
+
+img {
+  border: 3px solid rgba(208, 208, 208, 0.4);
+  border-radius: 2px;
+}
+
+figcaption {
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
+  line-height: 18px;
+  color: $darkest-grey;
+  text-decoration: none;
 }
 
 @include media("<=phone") {
