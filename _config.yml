@@ -2,3 +2,9 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 excerpt_separator: <!--more-->
+title: Anatoli Makarevich on web
+url: http://makaroni4.com
+author:
+  name: Anatoli Makarevich
+gems:
+  - jekyll-feed
