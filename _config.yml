@@ -8,3 +8,4 @@ author:
   name: Anatoli Makarevich
 gems:
   - jekyll-feed
+  - jemoji

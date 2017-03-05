@@ -3,7 +3,6 @@ layout: post
 title:  "How to tune a guitar with Ruby and FFT"
 date: 2014-03-26
 categories: ruby hacking
-background_image: "/images/posts/ruby_fft/top_image.png"
 published: true
 ---
 

@@ -115,6 +115,10 @@ body {
     h2,
     h3 {
       margin-top: 30px;
+
+      font-family: 'Cabin', sans-serif;
+      font-weight: 700;
+      color: $dark-blue;
     }
 
     h3 + p {
@@ -122,11 +126,8 @@ body {
     }
 
     h3 {
-      font-family: 'Cabin', sans-serif;
-      font-weight: 700;
       font-size: 24px;
       line-height: 36px;
-      color: $dark-blue;
     }
 
     blockquote {
@@ -202,6 +203,23 @@ body {
   line-height: 20px;
 }
 
+.two-images {
+  margin-top: 20px;
+  margin-left: -27%;
+  display: flex;
+  width: 150%;
+
+  img {
+    display: block;
+    width: 50%;
+    height: 100%;
+
+    &:last-child {
+      margin-left: 2%;
+    }
+  }
+}
+
 .tweet {
   display: inline-block;
   padding: 17px 45px;
@@ -241,6 +259,7 @@ body {
 
 img {
   display: block;
+  width: 100%;
 
   border: 1px solid rgba(208, 208, 208, 0.4);
   border-radius: 2px;
@@ -252,6 +271,33 @@ figcaption {
   line-height: 18px;
   color: $darkest-grey;
   text-decoration: none;
+}
+
+img.emoji {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+
+  border: 0;
+}
+
+@include media("<=tablet") {
+  .two-images {
+    margin-top: 10px;
+    margin-left: 0;
+    display: block;
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      margin: 0;
+
+      &:last-child {
+        margin: 20px 0 0;
+      }
+    }
+  }
 }
 
 @include media("<=phone") {
