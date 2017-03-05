@@ -22,7 +22,7 @@ So the procedure we are going to follow is called [survival analysis](https://en
 
 Let's think of a brighter example for it than cancer patients. It could be percentage of working laptops from the same batch or fraction of people who continue use your product after first week, second week, etc.
 
-In our research we'll look at how many people who started online course continue with the it and watch new lessons.
+In our research we'll look at how many people who started online course continue with it and watch new lessons.
 
 ## Main assumption
 
@@ -40,9 +40,7 @@ So I've picked up some courses on programming, chess, guitar, drawing and fitnes
 * [ReactJS + Redux Basics](https://www.youtube.com/watch?v=qrsle5quS7A&list=PL55RiY5tL51rrC3sh8qLiYHqUV3twEYU_)
 * [React JS Tutorials for Beginners](https://www.youtube.com/watch?v=-AbaV3nrw6E&list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA)
 
-I've stumbled upon [yt gem](https://github.com/Fullscreen/yt) for working with Youtube API, so let's use it to get pageviews data. Btw all the code for this research is available [on Github](https://github.com/makaroni4/youtube_survival).
-
-I think there is no use to share Ruby basics like looping through array of ids and dump downloaded data to csv, you can [check all the code yourself](https://github.com/makaroni4/youtube_survival). May be pay attention how it's organized. It's very much inspired by Jupyter Notebooks in Python: progression of steps that should be run one buy one.
+I think there is no use to share Ruby basics like looping through array of ids and dump downloaded data to csv, you can [check all the code yourself](https://github.com/makaroni4/youtube_survival). May be pay attention how it's organized. It's very much inspired by Jupyter Notebooks in Python: progression of steps that should be run one by one.
 
 ## Visualize survival curves
 
