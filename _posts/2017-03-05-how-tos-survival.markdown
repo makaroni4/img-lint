@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How tos survival"
-date: 2017-02-26
+date: 2017-03-25
 categories: ruby parsing gnuplot
 published: true
 ---
