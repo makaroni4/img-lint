@@ -57,7 +57,7 @@ At this point, we have [pageviews for each video](https://github.com/makaroni4/y
 
 As you can see not every curve has downward slope – there are spikes in the middle with millions of pageviews. I guess it's very specific to Youtube when some videos became viral – just look at the title "How to Achieve Checkmate in 2 Moves". So we'll remove these points. We'd also remove pageviews when users haven't started from the beginning, but our assumption is that there are no such pageviews.
 
-For the final plot will calculate a portion of "survived" users for every lesson:
+For the final plot we will calculate a portion of "survived" users for every lesson:
 
 <img src="/images/posts/youtube_survival/survival_curves.png" alt="Youtube Pageviews Survival Curves">
 
