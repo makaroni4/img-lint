@@ -68,6 +68,10 @@ body {
   font-size: 18px;
   line-height: 32px;
 
+  &--blur {
+    filter: blur(3px);
+  }
+
   &__date {
     margin-bottom: 5px;
 
@@ -263,6 +267,8 @@ img {
 
   border: 1px solid rgba(208, 208, 208, 0.4);
   border-radius: 2px;
+
+  cursor: pointer;
 }
 
 figcaption {
@@ -279,6 +285,32 @@ img.emoji {
   height: 25px;
 
   border: 0;
+}
+
+.image-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+
+  background-color: rgba(167, 167, 167, 0.5);
+
+  &.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    display: block;
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    z-index: 1001;
+  }
 }
 
 @include media("<=tablet") {
