@@ -306,8 +306,11 @@ img.emoji {
 
   &__img {
     display: block;
-    width: 80%;
-    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 90%;
+    height: 90%;
     margin: auto;
     z-index: 1001;
   }

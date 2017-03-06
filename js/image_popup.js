@@ -13,7 +13,7 @@ $(function() {
 
     ga("send", "event", "image-popup", "click", "1-image-popup");
 
-    $img.attr("src", $this.attr("src"));
+    $img.css('background-image', 'url(' + $this.attr("src") + ')');
     $imagePopup.addClass("active");
     $post.addClass("post--blur");
   });
