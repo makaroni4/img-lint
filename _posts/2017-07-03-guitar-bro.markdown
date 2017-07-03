@@ -7,6 +7,11 @@ published: false
 
 It's always a pleasure to mix programming with something tactile and even more – with something musical. Check out my little experiment of building a browser game that helps learning notes on guitar.
 
+<figure>
+  <img src="/images/posts/guitar_bro/guitar_bro.gif" />
+  <figcaption>Guitar Bro in action. <a href="https://makaroni4.github.io/guitar_bro/">Try it out!</a></figcaption>
+</figure>
+
 <!--more-->
 
 ## Intro
