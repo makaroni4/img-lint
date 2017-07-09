@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Meet Guitar Bro â€“ open source browser game that helps you learn notes on guitar"
-date: 2017-07-03
+date: 2017-06-03
 published: false
 ---
 
@@ -9,7 +9,7 @@ It's always a pleasure to mix programming with something tactile and even more â
 
 <figure>
   <img src="/images/posts/guitar_bro/guitar_bro.gif" />
-  <figcaption>Guitar Bro in action. <a href="https://makaroni4.github.io/guitar_bro/">Try it out!</a></figcaption>
+  <figcaption>Guitar Bro in action. <a href="https://makaroni4.github.io/guitar_bro/" target="_blank">Try it out!</a></figcaption>
 </figure>
 
 <!--more-->
@@ -43,8 +43,13 @@ The core of the game is to detect frequency and make sure it matches a note. For
 
 Next step was to see how FFT works in the browser, so we quickly set up a little visualisation with [d3](https://github.com/d3) and played with some attributes to find a proper resolution and maximize accuracy.
 
+## Identifying notes
+
+Looking at notes frequencies above we can see that the lowest distance between to guitar notes is around 5Hz, so we need our FFT Analyser to have a resolution 5Hz or lower. FFT resolution is determind via [sampling rate and FFT size](http://zone.ni.com/reference/en-XX/help/372416B-01/svtconcepts/fft_funda/) (number of samples). Default [sampling rate of Web Audio API FFT Analyser](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/sampleRate) is 44100Hz and [FFT size](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize) is always a power of 2 (from 32 to 32768). So if we set FFT size to 8192 we'll get frequency resolution of `44100 / 8192 =~ 5.4Hz` which should be enough for our purposes.
+
+So if we plot FFT Analyser output and also mark notes (for highest E-string on example) we can see that
+
 TODO:
-- GIF for intro & repo
 - repo with D3 visuals
 - params in FFT, resolution => Chrome only
 - trying to add songs (BPM and real notes durations)
