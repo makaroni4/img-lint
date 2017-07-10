@@ -71,4 +71,4 @@ At this step it was proven that we can use just a browser (only latest Chrome, s
 
 It's mind blowing, how we went from little research prototype to a browser game which I do use to learn notes. There are obvioulsy many improvements that could be made to Guitar Bro – add Bass mode, Ukulele mode, add more songs but it  won't make any sense if no one will use it.
 
-So I encourage you to [try it out](https://makaroni4.github.io/guitar_bro/) or contribute. Check out [Github repo]((https://github.com/makaroni4/guitar_bro)) for code or submit an issue with feature request.
+So I encourage you to [try it out](https://makaroni4.github.io/guitar_bro/) or contribute. Check out [Github repo](https://github.com/makaroni4/guitar_bro) for code or submit an issue with feature request.
