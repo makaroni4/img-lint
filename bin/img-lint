@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "img_lint"
+require "img_lint/config"
+require "img_lint/linter"
+
+config = IMGLint::Config.load
+IMGLint::Linter.new.lint(config)
