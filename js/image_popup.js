@@ -8,7 +8,7 @@ $(function() {
   var $img = $imagePopup.find(".js-image-popup-img");
   var $post = $(".post");
 
-  $post.find("img").on("click", function(e) {
+  $post.find("img").not(".emoji").on("click", function(e) {
     var $this = $(this);
 
     ga("send", "event", "image-popup", "click", "1-image-popup");
