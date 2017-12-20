@@ -150,6 +150,24 @@ body {
     }
   }
 
+  &__job-ad {
+    display: none;
+    margin-top: 40px;
+
+    &--active {
+      display: block;
+
+      -moz-transition: opacity 1s linear;
+      -o-transition: opacity 1s linear;
+      -webkit-transition: opacity 1s linear;
+      transition: opacity 1s linear;
+    }
+
+    &--fade-out {
+      opacity: 0;
+    }
+  }
+
   &__credits {
     margin-top: 50px;
   }
@@ -183,7 +201,6 @@ body {
   text-decoration: none;
 
   list-style: none;
-
 
   &--active {
     padding-bottom: 4px;
@@ -226,11 +243,13 @@ body {
 
 .tweet {
   display: inline-block;
-  padding: 17px 45px;
+  padding: 17px 40px;
 
-  border-radius: 29px;
+  border-radius: 40px;
 
   background-color: #4187FF;
+
+  text-align: center;
 
   &__container {
     display: flex;
@@ -320,6 +339,51 @@ img.emoji {
   }
 }
 
+.job-ad {
+  padding: 25px;
+
+  background-color: $yellow;
+
+  &__header {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: $dark-blue;
+  }
+
+  &__body {
+    margin-top: 10px;
+
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+    color: $copy-black;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &__not-interested-link {
+    display: inline-block;
+    margin-left: 30px;
+
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    line-height: 18px;
+    color: $darker-grey;
+    text-decoration: underline;
+
+    &:hover {
+      color: $darkest-grey;
+    }
+  }
+}
+
 @include media("<=tablet") {
   .two-images {
     margin-top: 10px;
@@ -379,5 +443,16 @@ img.emoji {
 
   img {
     width: 100%;
+  }
+
+  .job-ad {
+    &__actions {
+      flex-direction: column;
+    }
+
+    &__not-interested-link {
+      margin-left: 0;
+      margin-top: 20px;
+    }
   }
 }
