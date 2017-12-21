@@ -342,7 +342,13 @@ img.emoji {
 .job-ad {
   padding: 25px;
 
+  border-radius: 2px;
+
   background-color: $yellow;
+
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(128,109,109,0.5);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(128,109,109,0.5);
+  box-shadow: 0px 0px 6px 0px rgba(128,109,109,0.5);
 
   &__header {
     font-family: 'Cabin', sans-serif;
