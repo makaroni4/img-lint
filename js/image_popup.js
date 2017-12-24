@@ -11,8 +11,6 @@ $(function() {
   $post.find("img").not(".emoji").on("click", function(e) {
     var $this = $(this);
 
-    ga("send", "event", "image-popup", "click", "1-image-popup");
-
     $img.css('background-image', 'url(' + $this.attr("src") + ')');
     $imagePopup.addClass("active");
     $post.addClass("post--blur");

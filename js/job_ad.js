@@ -37,7 +37,5 @@ $(function() {
     });
 
     createCookie("seen-job-ad", true, 30);
-
-    ga("send", "event", "job-ad", "close");
   })
 });

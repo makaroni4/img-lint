@@ -2,8 +2,6 @@ $(function() {
   $(".js-tweet").click(function(e) {
     e.preventDefault();
 
-    ga("send", "event", "sharing", "click", "twitter");
-
     var width  = 575,
     height = 400,
     left   = ($(window).width()  - width)  / 2,
