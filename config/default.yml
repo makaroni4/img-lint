@@ -1,2 +1,2 @@
-max_file_size: "150Kb"
+max_file_size: 150 # Kb
 image_formats: "jpg,png,gif"
