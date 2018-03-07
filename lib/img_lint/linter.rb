@@ -13,7 +13,7 @@ module IMGLint
 
       images = Dir.glob(%(#{path}/**/*.{#{config["image_formats"]}}))
 
-      puts "No images found in #{path}" if images.empty?
+      puts "No images found in #{path}" if verbose && images.empty?
 
       fat_images = images.select do |file|
         File.new(file).size > max_file_size * 1024
@@ -24,6 +24,8 @@ module IMGLint
 
         fat_images.each do |image|
           file_size = File.new(image).size / 1024
+
+          image.sub!(Dir.pwd, "") if Dir.pwd == path
 
           puts [image, "#{file_size}Kb"].join("\t")
         end

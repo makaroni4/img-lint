@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+$LOAD_PATH << File.expand_path("../../lib", __FILE__)
+
 require "img_lint"
 require "img_lint/config"
 require "img_lint/linter"
