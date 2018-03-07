@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 require "yaml"
 
 module IMGLint
+  # Config class is responsible to load img-lint either a user defined config
+  # or a default one (config/default.yml)
   class Config
-    FILE_NAME = ".img-lint.yml"
+    FILE_NAME = ".img-lint.yml".freeze
     DEFAULT_FILE = File.join(IMG_LINT_HOME, "config", "default.yml")
 
     class << self

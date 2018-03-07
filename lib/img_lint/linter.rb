@@ -1,4 +1,9 @@
+# frozen_string_literal: true
+
 module IMGLint
+  # Linter class is responsible for checking images (only formats specified
+  # in config) if they exceed a curtain size. It also prints out list of
+  # suspicious images.
   class Linter
     attr_accessor :config
 
@@ -9,13 +14,7 @@ module IMGLint
     def lint(path: Dir.pwd, verbose: true)
       path ||= Dir.pwd
 
-      images = Dir.glob(%(#{path}/**/*.{#{config["image_formats"]}}))
-
-      puts "No images found in #{path}" if verbose && images.empty?
-
-      fat_images = images.select do |file|
-        File.new(file).size > config["max_file_size"] * 1024
-      end
+      fat_images = find_fat_images(path, verbose)
 
       print_report(path, fat_images, verbose)
 
@@ -24,8 +23,18 @@ module IMGLint
 
     private
 
+    def find_fat_images(path, verbose)
+      images = Dir.glob(%(#{path}/**/*.{#{config['image_formats']}}))
+
+      puts "No images found in #{path}" if verbose && images.empty?
+
+      images.select do |file|
+        File.new(file).size > config["max_file_size"] * 1024
+      end
+    end
+
     def print_report(path, fat_images, verbose)
-      if fat_images.size > 0 && verbose
+      if !fat_images.empty? && verbose
         puts "Suspicious images:"
 
         fat_images.each do |image|

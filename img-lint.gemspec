@@ -1,4 +1,4 @@
-$LOAD_PATH << File.expand_path('../lib', __FILE__)
+$LOAD_PATH << File.expand_path("../lib", __FILE__)
 require "img_lint/version"
 
 Gem::Specification.new do |spec|
@@ -12,9 +12,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/makaroni4/img-lint"
   spec.license       = "MIT"
 
-  spec.files          = Dir['config/**/*.yml'] +
-                        Dir["lib/**/*.rb"] +
-                        ["LICENSE.txt"]
+  spec.files         = Dir["config/**/*.yml"] +
+                       Dir["lib/**/*.rb"] +
+                       ["LICENSE.txt"]
 
   spec.executables   = ["img-lint"]
   spec.require_paths = ["lib"]

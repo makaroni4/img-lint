@@ -1,7 +1,7 @@
 require "bundler/setup"
 require "img_lint"
 
-if ENV['TRAVIS']
+if ENV["TRAVIS"]
   require "coveralls"
   Coveralls.wear!
 end
