@@ -7,23 +7,29 @@ module IMGLint
     end
 
     def lint(path: Dir.pwd, verbose: true)
+      path ||= Dir.pwd
+
       max_file_size = config["max_file_size"].to_i
 
-      big_images = Dir.glob(%(#{path}/**/*.{#{config["image_formats"]}})).select do |file|
+      images = Dir.glob(%(#{path}/**/*.{#{config["image_formats"]}}))
+
+      puts "No images found in #{path}" if images.empty?
+
+      fat_images = images.select do |file|
         File.new(file).size > max_file_size * 1024
       end
 
-      if big_images.size > 0 && verbose
+      if fat_images.size > 0 && verbose
         puts "Suspicious images:"
 
-        big_images.each do |image|
+        fat_images.each do |image|
           file_size = File.new(image).size / 1024
 
           puts [image, "#{file_size}Kb"].join("\t")
         end
       end
 
-      big_images
+      fat_images
     end
   end
 end

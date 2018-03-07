@@ -3,6 +3,29 @@
 require "img_lint"
 require "img_lint/config"
 require "img_lint/linter"
+require "optparse"
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: img-lint [options]"
+
+  opts.on("-p", "--path PATH", "Path to a folder with images") do |v|
+    options["path"] = v
+  end
+
+  opts.on("-m", "--max-size MAX_SIZE", "Max image size allowed, '150' by default (150Kb)") do |v|
+    options["max_file_size"] = v.to_i
+  end
+
+  opts.on("-f", "--format IMAGE_FORMATS", "Image formats, 'jpg,png,gif' by default") do |v|
+    options["image_formats"] = v
+  end
+end.parse!
 
 config = IMGLint::Config.load
-IMGLint::Linter.new.lint(config)
+config.merge!(options)
+
+path = config.delete("path")
+
+linter = IMGLint::Linter.new(config: config)
+linter.lint(path: path)
