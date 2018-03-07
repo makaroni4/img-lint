@@ -2,7 +2,7 @@ $LOAD_PATH << File.expand_path('../lib', __FILE__)
 require "img_lint/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "img_lint"
+  spec.name          = "img-lint"
   spec.version       = IMGLint::VERSION
   spec.authors       = ["Anatoli Makarevich"]
   spec.email         = ["makaroni4@gmail.com"]
