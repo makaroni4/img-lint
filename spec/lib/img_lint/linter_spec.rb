@@ -11,7 +11,7 @@ describe IMGLint::Linter do
       let(:config) { {} }
 
       it "finds images that exceed 150Kb default limit" do
-        expect(linted_images).to eq(["170kb_image.jpg"])
+        expect(linted_images).to match_array(["170kb_image.jpg", "excluded_big_image_1.jpg", "excluded_big_image_2.jpg"])
       end
     end
 
@@ -20,7 +20,7 @@ describe IMGLint::Linter do
         let(:config) { { "max_file_size" => 30 } }
 
         it "finds all images above the limit" do
-          expect(linted_images).to match(["170kb_image.jpg", "40kb_image.jpg"])
+          expect(linted_images).to match_array(["170kb_image.jpg", "40kb_image.jpg", "excluded_big_image_1.jpg", "excluded_big_image_2.jpg"])
         end
       end
 
@@ -37,6 +37,17 @@ describe IMGLint::Linter do
 
         it "find no images" do
           expect(linted_images).to eq([])
+        end
+      end
+
+      context "when image is excluded" do
+        let(:config) { { "exclude" => [
+          "spec/fixtures/excluded_big_image_1.jpg",
+          "spec/fixtures/excluded_folder/**.jpg"
+        ]} }
+
+        it "excludes specified images" do
+          expect(linted_images).to match_array(["170kb_image.jpg"])
         end
       end
     end

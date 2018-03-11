@@ -1,4 +1,5 @@
 require "bundler/setup"
+require "byebug"
 require "img_lint"
 
 if ENV["TRAVIS"]

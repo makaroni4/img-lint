@@ -29,7 +29,23 @@ module IMGLint
       puts "No images found in #{path}" if verbose && images.empty?
 
       images.select do |file|
-        File.new(file).size > config["max_file_size"] * 1024
+        !excluded_file?(file) && File.new(file).size > config["max_file_size"] * 1024
+      end
+    end
+
+    def exclude_patterns
+      @exclude_patterns ||= config.fetch("exclude", []).map! do |pattern|
+        if pattern.start_with?('/')
+          pattern
+        else
+          File.expand_path(pattern, File.expand_path(Dir.pwd))
+        end
+      end
+    end
+
+    def excluded_file?(file_path)
+      exclude_patterns.any? do |pattern|
+        File.fnmatch?(pattern, file_path)
       end
     end
 
