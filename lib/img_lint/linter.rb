@@ -54,10 +54,13 @@ module IMGLint
 
       puts "Suspicious images:"
 
-      fat_images.each do |image|
-        file_size = File.new(image).size / 1024
+      fat_images = fat_images.inject({}) do |hash, image|
+        hash[image] = File.new(image).size / 1024
+        hash
+      end
 
-        image.sub!(Dir.pwd, "") if Dir.pwd == path
+      fat_images.sort_by(&:last).reverse.each do |image, file_size|
+        image = image.sub(Dir.pwd, "") if Dir.pwd == path
 
         puts [image, "#{file_size}Kb"].join("\t")
       end
