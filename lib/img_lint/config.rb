@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "yaml"
+require "img_lint/constants"
 
 module IMGLint
   # Config class is responsible to load img-lint either a user defined config

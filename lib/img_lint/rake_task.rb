@@ -2,6 +2,7 @@
 
 require "rake"
 require "rake/tasklib"
+require "img_lint/cli"
 
 module IMGLint
   # Rake task
@@ -21,10 +22,7 @@ module IMGLint
       task(@name) do |_task|
         require "img_lint"
 
-        linter = IMGLint::Linter.new
-        fat_images = linter.lint
-
-        exit fat_images.empty? ? 0 : 2
+        exit IMGLint::CLI.new.run
       end
     end
   end

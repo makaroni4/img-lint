@@ -6,7 +6,7 @@ Style/SymbolProc:
     - "lib/img_lint/linter.rb"
 
 Metrics/LineLength:
-  Max: 100
+  Max: 110
 
 Metrics/BlockLength:
   Max: 60
@@ -17,3 +17,8 @@ Metrics/ModuleLength:
 
 Metrics/AbcSize:
   Max: 25
+
+Metrics/MethodLength:
+  Max: 25
+  Exclude:
+    - "lib/img_lint/cli.rb"
