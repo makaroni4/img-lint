@@ -11,8 +11,8 @@ module IMGLint
 
     class << self
       def load
-        user_config = File.exist?(user_file) ? YAML.load(File.read(user_file)) : {}
-        default_config = YAML.load(File.read(DEFAULT_FILE))
+        user_config = File.exist?(user_file) ? YAML.safe_load(File.read(user_file)) : {}
+        default_config = YAML.safe_load(File.read(DEFAULT_FILE))
 
         default_config.merge(user_config)
       end

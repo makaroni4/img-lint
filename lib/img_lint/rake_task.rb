@@ -18,7 +18,7 @@ module IMGLint
     def define
       desc "img-lint"
 
-      task(@name) do |_task, task_args|
+      task(@name) do |_task|
         require "img_lint"
 
         linter = IMGLint::Linter.new

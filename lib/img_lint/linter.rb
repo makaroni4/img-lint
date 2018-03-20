@@ -35,7 +35,7 @@ module IMGLint
 
     def exclude_patterns
       @exclude_patterns ||= config.fetch("exclude", []).map! do |pattern|
-        if pattern.start_with?('/')
+        if pattern.start_with?("/")
           pattern
         else
           File.expand_path(pattern, File.expand_path(Dir.pwd))
@@ -50,16 +50,16 @@ module IMGLint
     end
 
     def print_report(path, fat_images, verbose)
-      if !fat_images.empty? && verbose
-        puts "Suspicious images:"
+      return if fat_images.empty? || !verbose
 
-        fat_images.each do |image|
-          file_size = File.new(image).size / 1024
+      puts "Suspicious images:"
 
-          image.sub!(Dir.pwd, "") if Dir.pwd == path
+      fat_images.each do |image|
+        file_size = File.new(image).size / 1024
 
-          puts [image, "#{file_size}Kb"].join("\t")
-        end
+        image.sub!(Dir.pwd, "") if Dir.pwd == path
+
+        puts [image, "#{file_size}Kb"].join("\t")
       end
     end
   end
