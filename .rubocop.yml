@@ -1,6 +1,10 @@
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
+Style/SymbolProc:
+  Exclude:
+    - "lib/img_lint/linter.rb"
+
 Metrics/LineLength:
   Max: 100
 
@@ -8,6 +12,5 @@ Metrics/ModuleLength:
   Exclude:
     - "**/*_spec.rb"
 
-Metrics/BlockLength:
-  Exclude:
-    - "**/*_spec.rb"
+Metrics/AbcSize:
+  Max: 25

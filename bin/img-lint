@@ -18,7 +18,7 @@ else
   options = {}
   OptionParser.new do |opts|
     def unindent(s)
-      s.gsub(/^#{s.scan(/^[ \t]+(?=\S)/).min}/, '')
+      s.gsub(/^#{s.scan(/^[ \t]+(?=\S)/).min}/, "")
     end
 
     opts.banner = unindent(<<-TEXT)

@@ -28,8 +28,12 @@ module IMGLint
 
       puts "No images found in #{path}" if verbose && images.empty?
 
-      images.select do |file|
-        !excluded_file?(file) && File.new(file).size > config["max_file_size"] * 1024
+      images.each_with_object({}) do |file, o|
+        image_size = File.new(file).size / 1024
+
+        if !excluded_file?(file) && image_size > config["max_file_size"]
+          o[file] = image_size
+        end
       end
     end
 
@@ -54,15 +58,13 @@ module IMGLint
 
       puts "Suspicious images:"
 
-      fat_images = fat_images.inject({}) do |hash, image|
-        hash[image] = File.new(image).size / 1024
-        hash
-      end
+      longest_image_path = fat_images.keys.max { |k| k.size }.size
+      longest_file_size = fat_images.values.max { |v| v.to_s.size }.size
 
       fat_images.sort_by(&:last).reverse.each do |image, file_size|
         image = image.sub(Dir.pwd, "") if Dir.pwd == path
 
-        puts [image, "#{file_size}Kb"].join("\t")
+        puts [image.ljust(longest_image_path), "#{file_size}Kb".rjust(longest_file_size)].join("\t")
       end
     end
   end

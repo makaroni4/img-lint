@@ -3,7 +3,7 @@ require "spec_helper"
 describe IMGLint::Linter do
   describe "#lint" do
     let(:fixture_path) { File.join(File.dirname(__FILE__), "../../fixtures") }
-    let(:linted_images) { linter.lint(verbose: false).map { |f| File.basename(f) } }
+    let(:linted_images) { linter.lint(verbose: false).keys.map { |f| File.basename(f) } }
     let(:linter) { described_class.new(config: config) }
 
     context "with default config" do
