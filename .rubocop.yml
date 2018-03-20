@@ -8,6 +8,9 @@ Style/SymbolProc:
 Metrics/LineLength:
   Max: 100
 
+Metrics/BlockLength:
+  Max: 60
+
 Metrics/ModuleLength:
   Exclude:
     - "**/*_spec.rb"

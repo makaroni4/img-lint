@@ -29,11 +29,11 @@ module IMGLint
       puts "No images found in #{path}" if verbose && images.empty?
 
       images.each_with_object({}) do |file, o|
+        next if excluded_file?(file)
+
         image_size = File.new(file).size / 1024
 
-        if !excluded_file?(file) && image_size > config["max_file_size"]
-          o[file] = image_size
-        end
+        o[file] = image_size if image_size > config["max_file_size"]
       end
     end
 
