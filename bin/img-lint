@@ -7,27 +7,48 @@ require "img_lint/config"
 require "img_lint/linter"
 require "optparse"
 
-options = {}
-OptionParser.new do |opts|
-  opts.banner = "Usage: img-lint [options]"
+if ARGV.first == "install"
+  require "fileutils"
 
-  opts.on("-p", "--path PATH", "Path to a folder with images") do |v|
-    options["path"] = v
-  end
+  target_file = File.join(Dir.pwd, ".img-lint.yml")
+  config_file = File.join(File.expand_path(File.dirname(__FILE__)), "..", "config", "default.yml")
 
-  opts.on("-m", "--max-size MAX_SIZE", "Max image size allowed, '150' by default (150Kb)") do |v|
-    options["max_file_size"] = v.to_i
-  end
+  FileUtils.cp(config_file, target_file)
+else
+  options = {}
+  OptionParser.new do |opts|
+    def unindent(s)
+      s.gsub(/^#{s.scan(/^[ \t]+(?=\S)/).min}/, '')
+    end
 
-  opts.on("-f", "--format IMAGE_FORMATS", "Image formats, 'jpg,png,gif' by default") do |v|
-    options["image_formats"] = v
-  end
-end.parse!
+    opts.banner = unindent(<<-TEXT)
+      img-lint help
 
-config = IMGLint::Config.load
-config.merge!(options)
+      1. img-lint install
 
-path = config.delete("path")
+      This will copy default config to your local .img-lint.yml file
 
-linter = IMGLint::Linter.new(config: config)
-linter.lint(path: path)
+      2. img-lint [options]
+    TEXT
+
+    opts.on("-p", "--path PATH", "Path to a folder with images") do |v|
+      options["path"] = v
+    end
+
+    opts.on("-m", "--max-size MAX_SIZE", "Max image size allowed, '150' by default (150Kb)") do |v|
+      options["max_file_size"] = v.to_i
+    end
+
+    opts.on("-f", "--format IMAGE_FORMATS", "Image formats, 'jpg,png,gif' by default") do |v|
+      options["image_formats"] = v
+    end
+  end.parse!
+
+  config = IMGLint::Config.load
+  config.merge!(options)
+
+  path = config.delete("path")
+
+  linter = IMGLint::Linter.new(config: config)
+  linter.lint(path: path)
+end
