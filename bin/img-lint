@@ -50,5 +50,7 @@ else
   path = config.delete("path")
 
   linter = IMGLint::Linter.new(config: config)
-  linter.lint(path: path)
+  fat_images = linter.lint(path: path)
+
+  exit fat_images.empty? ? 0 : 2
 end
