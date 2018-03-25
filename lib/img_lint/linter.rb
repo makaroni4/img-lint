@@ -32,7 +32,7 @@ module IMGLint
     def find_heavy_images(path, verbose)
       images = Dir.glob(%(#{path}/**/*.{#{@config['image_formats']}}))
 
-      puts "No images found in #{path}" if verbose && images.empty?
+      puts "--> img-lint found no images in #{path}" if verbose && images.empty?
 
       images.each_with_object({}) do |file, o|
         next if excluded_file?(file)
@@ -59,18 +59,31 @@ module IMGLint
       end
     end
 
-    def print_report(path, heavy_images, verbose)
-      return if heavy_images.empty? || !verbose
+    def longest_path_and_file_size(path, heavy_images)
+      longest_image_path = heavy_images.keys.max { |k| k.size }
+      longest_image_path = longest_image_path.sub(Dir.pwd, "") if Dir.pwd == path
 
-      puts "Suspicious images:"
-
-      longest_image_path = heavy_images.keys.max { |k| k.size }.size
       longest_file_size = heavy_images.values.max { |v| v.to_s.size }.size
+
+      [longest_image_path.size, longest_file_size]
+    end
+
+    def print_report(path, heavy_images, verbose)
+      return unless verbose
+
+      if heavy_images.empty?
+        puts "--> img-lint detected no heavy images"
+        return
+      end
+
+      puts "--> img-lint detected heavy images:"
+
+      longest_image_path_size, longest_file_size = longest_path_and_file_size(path, heavy_images)
 
       heavy_images.sort_by(&:last).reverse.each do |image, file_size|
         image = image.sub(Dir.pwd, "") if Dir.pwd == path
 
-        puts [image.ljust(longest_image_path), "#{file_size}Kb".rjust(longest_file_size)].join("\t")
+        puts [image.ljust(longest_image_path_size), "#{file_size}Kb".rjust(longest_file_size)].join("\t")
       end
     end
   end
