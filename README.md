@@ -51,3 +51,17 @@ exclude:
 ~~~
 
 Configuration from `.img-lint.yml` will extend the [default configuration](config/default.yml).
+
+## Rake integration
+
+To execute scss-lint via a Rake task, add the following to your Rakefile:
+
+~~~ruby
+require "img_lint/rake_task"
+
+IMGLint::RakeTask.new
+~~~
+
+## License
+
+This project is released under the [MIT License](https://github.com/makaroni4/img-lint/blob/master/LICENSE.txt).
