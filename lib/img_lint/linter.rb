@@ -6,12 +6,17 @@ module IMGLint
   # suspicious images.
   #
   class Linter
-    attr_accessor :config
-
+    # Be default gem will merge user-defined condif with the default one.
+    #
     def initialize(config: {})
-      self.config = IMGLint::Config.load.merge(config)
+      @config = IMGLint::Config.load.merge(config)
     end
 
+    # The gem's core method which actually goes through all images files and
+    # checks whether the image size exceeds the max size from config.
+    #
+    # Verbose attribute is there to surpress output when running specs.
+    #
     def lint(path: Dir.pwd, verbose: true)
       path ||= Dir.pwd
 
@@ -25,7 +30,7 @@ module IMGLint
     private
 
     def find_heavy_images(path, verbose)
-      images = Dir.glob(%(#{path}/**/*.{#{config['image_formats']}}))
+      images = Dir.glob(%(#{path}/**/*.{#{@config['image_formats']}}))
 
       puts "No images found in #{path}" if verbose && images.empty?
 
@@ -34,12 +39,12 @@ module IMGLint
 
         image_size = File.new(file).size / 1024
 
-        o[file] = image_size if image_size > config["max_file_size"]
+        o[file] = image_size if image_size > @config["max_file_size"]
       end
     end
 
     def exclude_patterns
-      @exclude_patterns ||= config.fetch("exclude", []).map! do |pattern|
+      @exclude_patterns ||= @config.fetch("exclude", []).map! do |pattern|
         if pattern.start_with?("/")
           pattern
         else
