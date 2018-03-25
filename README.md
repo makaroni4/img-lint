@@ -13,23 +13,23 @@
 
 ## Installation
 
-```bash
+~~~bash
 gem install img-lint
-```
+~~~
 
 or add it to your `Gemfile` and run `bundle install`:
 
-```ruby
+~~~ruby
 gem 'img-lint', require: false
-```
+~~~
 
 ## Usage
 
 Run `img-lint` in your console to lint images in the current folder or pass some arguments like so:
 
-```bash
+~~~bash
 img-lint -p /path/to/project -f "jpg,png" -m 30
-```
+~~~
 
 Command Line Flag         | Description
 --------------------------|----------------------------------------------------
@@ -61,6 +61,16 @@ require "img_lint/rake_task"
 
 IMGLint::RakeTask.new
 ~~~
+
+## Contributing
+
+That would be awesome to see you involved: Try out `img-lint`, give feedback via email or simply open an issue. If you're opening a PR, try to add some specs, so we keep the project stable:
+
+~~~ruby
+bundle exec rspec
+~~~
+
+By participating, you are expected to honor [Code of Conduct](https://github.com/makaroni4/img-lint/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
