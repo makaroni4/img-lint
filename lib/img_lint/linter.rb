@@ -4,6 +4,7 @@ module IMGLint
   # Linter class is responsible for checking images (only formats specified
   # in config) if they exceed a curtain size. It also prints out list of
   # suspicious images.
+  #
   class Linter
     attr_accessor :config
 
@@ -14,16 +15,16 @@ module IMGLint
     def lint(path: Dir.pwd, verbose: true)
       path ||= Dir.pwd
 
-      fat_images = find_fat_images(path, verbose)
+      heavy_images = find_heavy_images(path, verbose)
 
-      print_report(path, fat_images, verbose)
+      print_report(path, heavy_images, verbose)
 
-      fat_images
+      heavy_images
     end
 
     private
 
-    def find_fat_images(path, verbose)
+    def find_heavy_images(path, verbose)
       images = Dir.glob(%(#{path}/**/*.{#{config['image_formats']}}))
 
       puts "No images found in #{path}" if verbose && images.empty?
@@ -53,15 +54,15 @@ module IMGLint
       end
     end
 
-    def print_report(path, fat_images, verbose)
-      return if fat_images.empty? || !verbose
+    def print_report(path, heavy_images, verbose)
+      return if heavy_images.empty? || !verbose
 
       puts "Suspicious images:"
 
-      longest_image_path = fat_images.keys.max { |k| k.size }.size
-      longest_file_size = fat_images.values.max { |v| v.to_s.size }.size
+      longest_image_path = heavy_images.keys.max { |k| k.size }.size
+      longest_file_size = heavy_images.values.max { |v| v.to_s.size }.size
 
-      fat_images.sort_by(&:last).reverse.each do |image, file_size|
+      heavy_images.sort_by(&:last).reverse.each do |image, file_size|
         image = image.sub(Dir.pwd, "") if Dir.pwd == path
 
         puts [image.ljust(longest_image_path), "#{file_size}Kb".rjust(longest_file_size)].join("\t")

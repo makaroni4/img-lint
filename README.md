@@ -62,6 +62,8 @@ require "img_lint/rake_task"
 IMGLint::RakeTask.new
 ~~~
 
+Make sure to specify your [config](#configuration) when running img-lint with Rake or in CI mode.
+
 ## Contributing
 
 That would be awesome to see you involved: Try out `img-lint`, give feedback via email or simply open an issue. If you're opening a PR, try to add some specs, so we keep the project stable:

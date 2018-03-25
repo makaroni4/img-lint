@@ -5,7 +5,8 @@ require "rake/tasklib"
 require "img_lint/cli"
 
 module IMGLint
-  # Rake task
+  # Simple rake task to either add "rake img_lint" to the project's Rake tasks
+  # and use in CI for example.
   #
   class RakeTask < Rake::TaskLib
     def initialize(name = :img_lint)

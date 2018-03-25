@@ -7,7 +7,13 @@ require "optparse"
 $LOAD_PATH << File.expand_path(__dir__)
 
 module IMGLint
-  # CLI class
+  # CLI class is responsible for handling command-line arguments.
+  #
+  # If the first argument is an "install" command, then we just copying
+  # default config to project's root folder and exit.
+  #
+  # Otherwise we'd extract path/max image size/image format arguments and run
+  # linter.
   #
   class CLI
     def run(args = [])
@@ -29,14 +35,18 @@ module IMGLint
         path = config.delete("path")
 
         linter = IMGLint::Linter.new(config: config)
-        fat_images = linter.lint(path: path)
+        heavy_images = linter.lint(path: path)
 
-        fat_images.empty? ? 0 : 2
+        heavy_images.empty? ? 0 : 2
       end
     end
 
     private
 
+    # This method is needed to unindent
+    # ["here document"](https://en.wikibooks.org/wiki/Ruby_Programming/Here_documents)
+    # help description.
+    #
     def unindent(str)
       str.gsub(/^#{str.scan(/^[ \t]+(?=\S)/).min}/, "")
     end
