@@ -9,7 +9,7 @@
   <img src="https://user-images.githubusercontent.com/768070/37737892-76a69720-2d55-11e8-88e3-dfe3c5b5ae08.png" width="50%" alt="img-lint logo">
 </p>
 
-`img-lint` will help to keep your webapp from serving heavy and not optimized images. It's a zero-dependencies Ruby gem that will scan specified folders for images with size above curtain treshold. It could be run manually or easily integrated into CI.
+`img-lint` will help to keep your webapp from serving heavy and not optimized images. It's a zero-dependencies Ruby gem that will scan specified folders for images with size above a certain threshold. It could be run manually or easily integrated into CI.
 
 ## Installation
 
