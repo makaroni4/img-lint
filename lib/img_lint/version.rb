@@ -3,5 +3,5 @@
 # Module to keep the gem's version in. Make sure to bump it before release.
 #
 module IMGLint
-  VERSION = "0.0.16".freeze
+  VERSION = "0.0.17".freeze
 end
