@@ -9,6 +9,8 @@ module IMGLint
   # and use in CI for example.
   #
   class RakeTask < Rake::TaskLib
+    # The only argument is the name of the rake task to register.
+    #
     def initialize(name = :img_lint)
       @name = name
 

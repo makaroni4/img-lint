@@ -16,6 +16,12 @@ module IMGLint
   # linter.
   #
   class CLI
+    # CLI is used when running img-lint from command line (check bin/img-lint) file
+    # or from a Raketask (check lib/img_lint/rake_task file).
+    #
+    # In Raketask CLI#run is called without arguments (expected that config file is there)
+    # and in bin/img-lint ARGV is passed in.
+    #
     def run(args = [])
       if args.first == "install"
         require "fileutils"
