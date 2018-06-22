@@ -80,7 +80,7 @@ module IMGLint
 
       longest_image_path_size, longest_file_size = longest_path_and_file_size(path, heavy_images)
 
-      heavy_images.sort_by(&:last).reverse.each do |image, file_size|
+      heavy_images.sort_by(&:last).reverse_each do |image, file_size|
         image = image.sub(Dir.pwd, "") if Dir.pwd == path
 
         puts [image.ljust(longest_image_path_size), "#{file_size}Kb".rjust(longest_file_size)].join("\t")
