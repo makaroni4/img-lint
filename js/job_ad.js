@@ -1,4 +1,6 @@
 $(function() {
+  return;
+  
   var $jobAd = $(".post__job-ad");
 
   var createCookie = function(name, value, days) {
